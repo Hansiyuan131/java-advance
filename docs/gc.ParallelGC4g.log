@@ -1,0 +1,16 @@
+Java HotSpot(TM) 64-Bit Server VM (25.251-b08) for windows-amd64 JRE (1.8.0_251-b08), built on Mar 12 2020 06:31:49 by "" with MS VC++ 10.0 (VS2010)
+Memory: 4k page, physical 25053032k(16592000k free), swap 26625896k(11718064k free)
+CommandLine flags: -XX:InitialHeapSize=4294967296 -XX:MaxHeapSize=4294967296 -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseAdaptiveSizePolicy -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:-UseLargePagesIndividualAllocation -XX:+UseParallelGC 
+2022-03-13T14:29:13.186+0800: 0.581: [GC (Allocation Failure) [PSYoungGen: 1048576K->174578K(1223168K)] 1048576K->225912K(4019712K), 0.0325527 secs] [Times: user=0.05 sys=0.11, real=0.03 secs] 
+2022-03-13T14:29:13.337+0800: 0.732: [GC (Allocation Failure) [PSYoungGen: 1223154K->174576K(1223168K)] 1274488K->356384K(4019712K), 0.0448635 secs] [Times: user=0.13 sys=0.34, real=0.05 secs] 
+2022-03-13T14:29:13.497+0800: 0.892: [GC (Allocation Failure) [PSYoungGen: 1223152K->174580K(1223168K)] 1404960K->485508K(4019712K), 0.0395848 secs] [Times: user=0.36 sys=0.11, real=0.04 secs] 
+2022-03-13T14:29:13.657+0800: 1.051: [GC (Allocation Failure) [PSYoungGen: 1223156K->174590K(1223168K)] 1534084K->613662K(4019712K), 0.0407380 secs] [Times: user=0.25 sys=0.06, real=0.04 secs] 
+Heap
+ PSYoungGen      total 1223168K, used 302074K [0x000000076ab00000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 1048576K, 12% used [0x000000076ab00000,0x000000077277f080,0x00000007aab00000)
+  from space 174592K, 99% used [0x00000007b5580000,0x00000007bffff840,0x00000007c0000000)
+  to   space 174592K, 0% used [0x00000007aab00000,0x00000007aab00000,0x00000007b5580000)
+ ParOldGen       total 2796544K, used 439072K [0x00000006c0000000, 0x000000076ab00000, 0x000000076ab00000)
+  object space 2796544K, 15% used [0x00000006c0000000,0x00000006dacc8270,0x000000076ab00000)
+ Metaspace       used 2774K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 307K, capacity 386K, committed 512K, reserved 1048576K

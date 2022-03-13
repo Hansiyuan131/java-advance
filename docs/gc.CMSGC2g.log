@@ -1,0 +1,23 @@
+Java HotSpot(TM) 64-Bit Server VM (25.251-b08) for windows-amd64 JRE (1.8.0_251-b08), built on Mar 12 2020 06:31:49 by "" with MS VC++ 10.0 (VS2010)
+Memory: 4k page, physical 25053032k(16567268k free), swap 26625896k(11691952k free)
+CommandLine flags: -XX:InitialHeapSize=2147483648 -XX:MaxHeapSize=2147483648 -XX:MaxNewSize=715829248 -XX:MaxTenuringThreshold=6 -XX:NewSize=715829248 -XX:OldPLABSize=16 -XX:OldSize=1431654400 -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseAdaptiveSizePolicy -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseConcMarkSweepGC -XX:-UseLargePagesIndividualAllocation -XX:+UseParNewGC 
+2022-03-13T14:32:28.189+0800: 0.363: [GC (Allocation Failure) 2022-03-13T14:32:28.190+0800: 0.363: [ParNew: 559232K->69888K(629120K), 0.0257521 secs] 559232K->157106K(2027264K), 0.0260213 secs] [Times: user=0.03 sys=0.13, real=0.03 secs] 
+2022-03-13T14:32:28.278+0800: 0.451: [GC (Allocation Failure) 2022-03-13T14:32:28.278+0800: 0.451: [ParNew: 629120K->69888K(629120K), 0.0316163 secs] 716338K->284323K(2027264K), 0.0316687 secs] [Times: user=0.09 sys=0.11, real=0.03 secs] 
+2022-03-13T14:32:28.372+0800: 0.545: [GC (Allocation Failure) 2022-03-13T14:32:28.372+0800: 0.545: [ParNew: 629120K->69886K(629120K), 0.0791356 secs] 843555K->413984K(2027264K), 0.0791866 secs] [Times: user=0.78 sys=0.00, real=0.08 secs] 
+2022-03-13T14:32:28.512+0800: 0.686: [GC (Allocation Failure) 2022-03-13T14:32:28.512+0800: 0.686: [ParNew: 629118K->69888K(629120K), 0.0761114 secs] 973216K->533898K(2027264K), 0.0761775 secs] [Times: user=0.74 sys=0.05, real=0.08 secs] 
+2022-03-13T14:32:28.649+0800: 0.823: [GC (Allocation Failure) 2022-03-13T14:32:28.649+0800: 0.823: [ParNew: 629120K->69888K(629120K), 0.0754561 secs] 1093130K->652972K(2027264K), 0.0755125 secs] [Times: user=0.70 sys=0.08, real=0.08 secs] 
+2022-03-13T14:32:28.787+0800: 0.961: [GC (Allocation Failure) 2022-03-13T14:32:28.788+0800: 0.961: [ParNew: 629120K->69887K(629120K), 0.0787113 secs] 1212204K->778147K(2027264K), 0.0787972 secs] [Times: user=0.75 sys=0.03, real=0.08 secs] 
+2022-03-13T14:32:28.867+0800: 1.040: [GC (CMS Initial Mark) [1 CMS-initial-mark: 708260K(1398144K)] 789593K(2027264K), 0.0002130 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2022-03-13T14:32:28.867+0800: 1.040: [CMS-concurrent-mark-start]
+2022-03-13T14:32:28.871+0800: 1.045: [CMS-concurrent-mark: 0.004/0.004 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2022-03-13T14:32:28.871+0800: 1.045: [CMS-concurrent-preclean-start]
+2022-03-13T14:32:28.873+0800: 1.046: [CMS-concurrent-preclean: 0.002/0.002 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2022-03-13T14:32:28.873+0800: 1.046: [CMS-concurrent-abortable-preclean-start]
+Heap
+ par new generation   total 629120K, used 624299K [0x0000000080000000, 0x00000000aaaa0000, 0x00000000aaaa0000)
+  eden space 559232K,  99% used [0x0000000080000000, 0x00000000a1d6b270, 0x00000000a2220000)
+  from space 69888K,  99% used [0x00000000a2220000, 0x00000000a665fc10, 0x00000000a6660000)
+  to   space 69888K,   0% used [0x00000000a6660000, 0x00000000a6660000, 0x00000000aaaa0000)
+ concurrent mark-sweep generation total 1398144K, used 708260K [0x00000000aaaa0000, 0x0000000100000000, 0x0000000100000000)
+ Metaspace       used 2774K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 307K, capacity 386K, committed 512K, reserved 1048576K

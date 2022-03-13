@@ -23,7 +23,31 @@ target/
 
 *.imi
 *.iml
-docs
+#docs
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+!/docs/gc.G1GC2g.log
+!/docs/gc.SerialGC512m.log
+!/docs/gc.CMSGC1g.log
+!/docs/gc.ParallelGC4g.log
+!/docs/gc.CMSGC8g.log
+!/docs/gc.CMSGC4g.log
+!/docs/gc.ParallelGC1g.log
+!/docs/gc.ParallelGC256m.log
+!/docs/gc.ParallelGC2g.log
+!/docs/gc.G1GC8g.log
+!/docs/gc.CMSGC256m.log
+!/docs/gc.ParallelGC512m.log
+!/docs/gc.G1GC512m.log
+!/docs/gc.SerialGC8g.log
+!/docs/gc.G1GC256m.log
+!/docs/gc.SerialGC2g.log
+!/docs/gc.G1GC1g.log
+!/docs/gc.SerialGC1g.log
+!/docs/gc.SerialGC4g.log
+!/docs/gc.ParallelGC8g.log
+!/docs/gc.CMSGC512m.log
+!/docs/gc.G1GC4g.log
+!/docs/gc.SerialGC256m.log
+!/docs/gc.CMSGC2g.log
