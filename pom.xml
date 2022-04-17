@@ -18,6 +18,7 @@
         <module>concurrent</module>
         <module>custom-spring-boot-starter</module>
         <module>springboot-jdbc-example</module>
+        <module>dynamic-datasource</module>
     </modules>
 
     <properties>
@@ -34,11 +35,13 @@
         <logback.version>1.2.3</logback.version>
         <knife4j.version>3.0.2</knife4j.version>
         <mybatis.plus.version>3.3.2</mybatis.plus.version>
+        <mybatis.version>2.1.4</mybatis.version>
         <velocity.version>2.2</velocity.version>
         <screw.version>1.0.5</screw.version>
         <jasypt.version>1.18</jasypt.version>
         <validator.version>6.1.0.Final</validator.version>
         <netty.version>4.1.50.Final</netty.version>
+        <mysql.version>8.0.23</mysql.version>
     </properties>
 
     <dependencyManagement>
@@ -84,6 +87,16 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
