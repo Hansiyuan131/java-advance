@@ -20,7 +20,7 @@ import java.util.List;
  */
 @SpringBootTest
 @Slf4j
-public class OrderMapperTestInfo {
+public class OrderMapperTest {
 
     private static final int CORE = Math.min(Runtime.getRuntime().availableProcessors() * 2, 16);
 

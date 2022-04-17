@@ -1,4 +1,4 @@
-package com.yuan.dynamic.datasource.infrastructure.mapper;
+package com.yuan.dynamic.datasource.infrastructure.mapper.bitch;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,32 +21,27 @@ public class TaskParams implements Serializable {
     private static final long serialVersionUID = -2595701094521955595L;
 
     /**
-     * 当前页码
-     */
-    private Integer pageNum;
-
-    /**
-     * 每页条数
+     * 单次插入条数
      */
     private Integer size;
 
     /**
-     * 错误条数
+     * 错误批次
      */
     private AtomicLong errorNum;
 
     /**
-     * 成功条数
+     * 成功批次
      */
     private AtomicLong successfulNum;
 
     /**
      * 发送总页数计数
      */
-    private CountDownLatch totalPageCount;
+    private CountDownLatch totalBatchCount;
 
     /**
      * 发送批次计数
      */
-    private CountDownLatch batchPageCount;
+    private CountDownLatch loopBatchCount;
 }
