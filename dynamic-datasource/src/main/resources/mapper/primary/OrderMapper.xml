@@ -18,7 +18,20 @@
         <result column="revision" property="revision"/>
     </resultMap>
 
-    <insert id="insert" parameterType="com.yuan.dynamic.datasource.infrastructure.po.Order">
+    <insert id="batchInsert" parameterType="java.util.List" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO oms_order
+        (order_no, user_id, payment_method, order_money, district_money, payment_money, order_settlement_time,
+        state, created_by, created_time, updated_by, updated_time)
+        VALUES
+        <foreach collection="list" separator="," item="order">
+            (#{order.orderNo}, #{order.userId}, #{order.paymentMethod}, #{order.orderMoney}, #{order.districtMoney},
+            #{order.paymentMoney}, #{order.orderSettlementTime}, #{order.state}, #{order.userId}, now(),
+            #{order.userId},now())
+        </foreach>
+    </insert>
+
+    <insert id="insert" parameterType="com.yuan.dynamic.datasource.infrastructure.po.Order" keyColumn="id"
+            keyProperty="id" useGeneratedKeys="true">
         INSERT INTO oms_order
         (order_no, user_id, payment_method, order_money, district_money, payment_money, order_settlement_time,
          state, created_by, created_time, updated_by, updated_time)
