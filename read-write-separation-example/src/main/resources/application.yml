@@ -1,0 +1,51 @@
+spring:
+  shardingsphere:
+    # 数据源相关配置
+    datasource:
+      # 数据源名称
+      names: master,s1
+      # MySQL master数据源
+      master:
+        # 数据库连接池
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://101.42.251.247:3406/shardingsphere_demo?serverTimezone=UTC
+        username: root
+        password: mysql123456
+        connectionTimeoutMilliseconds: 3000
+        idleTimeoutMilliseconds: 60000
+        maxLifetimeMilliseconds: 1800000
+        maxPoolSize: 50
+        minPoolSize: 1
+        maintenanceIntervalMilliseconds: 30000
+      # slave数据源
+      s1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://101.42.251.247:3407/shardingsphere_demo?serverTimezone=UTC
+        username: root
+        password: mysql123456
+        connectionTimeoutMilliseconds: 3000
+        idleTimeoutMilliseconds: 60000
+        maxLifetimeMilliseconds: 1800000
+        maxPoolSize: 50
+        minPoolSize: 1
+        maintenanceIntervalMilliseconds: 30000
+    rules:
+      readwrite-splitting:
+        data-sources:
+          glapp:
+            write-data-source-name: master
+            read-data-source-names:
+              - s1
+            load-balancer-name: roundRobin # 负载均衡算法名称
+        load-balancers:
+          roundRobin:
+            type: ROUND_ROBIN # 一共两种一种是 RANDOM（随机），一种是 ROUND_ROBIN（轮询）
+    # 其他属性
+    props:
+      # 开启SQL显示
+      sql-show: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

@@ -43,7 +43,11 @@
         <validator.version>6.1.0.Final</validator.version>
         <netty.version>4.1.50.Final</netty.version>
         <mysql.version>8.0.23</mysql.version>
+<<<<<<< HEAD
         <shardingsphere.release.version>5.0.0-alpha</shardingsphere.release.version>
+=======
+        <shardingsphere.jdbc.version>5.0.0-beta</shardingsphere.jdbc.version>
+>>>>>>> c3a4274d5359ed8a00730a784ea5421e62603dde
     </properties>
 
     <dependencyManagement>
@@ -149,6 +153,11 @@
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpasyncclient</artifactId>
                 <version>${httpclient.sync.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>shardingsphere-jdbc-core-spring-boot-starter</artifactId>
+                <version>${shardingsphere.jdbc.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
