@@ -25,16 +25,23 @@ public class RedisConfig {
     private EnvConfig envConfig;
 
     @Bean(name = "redisTemplate")
-    public RedisTemplate<String, Serializable> redisTemplate(LettuceConnectionFactory connectionFactory) {
-        RedisTemplate<String, Serializable> redisTemplate = new RedisTemplate<>();
+    public RedisTemplate<String, Object> redisTemplate(LettuceConnectionFactory connectionFactory) {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setKeySerializer(new StringRedisSerializer());
 
         //使用Fastjson2JsonRedisSerializer序列化value的值
-        FastJson2JsonRedisSerializer serializer = new FastJson2JsonRedisSerializer(Serializable.class);
-
-        redisTemplate.setValueSerializer(serializer);
+        redisTemplate.setValueSerializer(new FastJson2JsonRedisSerializer<>(Serializable.class));
         redisTemplate.setConnectionFactory(connectionFactory);
 
+        return redisTemplate;
+    }
+
+    @Bean(name = "stockRedisTemplate")
+    public RedisTemplate<String, Object> stockRedisTemplate(LettuceConnectionFactory connectionFactory) {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new StringRedisSerializer());
+        redisTemplate.setConnectionFactory(connectionFactory);
         return redisTemplate;
     }
 

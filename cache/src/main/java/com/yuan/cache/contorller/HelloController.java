@@ -1,14 +1,15 @@
 package com.yuan.cache.contorller;
 
-import com.alibaba.fastjson.JSON;
 import com.yuan.cache.config.EnvConfig;
 import com.yuan.cache.utils.RedisLock;
 import com.yuan.cache.utils.RedisUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @description: Hello
@@ -17,6 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api")
+@Slf4j
 public class HelloController {
 
     @Resource
@@ -24,19 +26,41 @@ public class HelloController {
     @Resource
     private RedisUtil redisUtil;
 
+    @Resource(name = "stockRedisTemplate")
+    private RedisTemplate<String, Object> stockRedisTemplate;
+
     @RequestMapping("/hello")
     public String test() {
-        RedisLock lock = new RedisLock(redisUtil, "test_key");
+        String key = "test_key:";
+        RedisLock lock = new RedisLock(redisUtil, key);
         try {
             long outTime = 1000L;
             if (lock.lock(outTime)) {
-                Thread.sleep(500L);
+                if (Integer.parseInt(String.valueOf(stockRedisTemplate.opsForValue().get("IPHONE_STOCK:"))) <= 0) {
+                    return "无库存";
+                }
+                long stock = stockRedisTemplate.opsForValue().decrement("IPHONE_STOCK:");
+                System.out.println("IPhone " + stock + " 正在被抢....");
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         } finally {
             lock.unlock();
         }
         return "ok";
+    }
+
+    @RequestMapping("/stock/{stockCount}")
+    public String setStock(@PathVariable String stockCount) {
+        stockRedisTemplate.opsForValue().set("IPHONE_STOCK:", stockCount);
+        return (String) stockRedisTemplate.opsForValue().get("IPHONE_STOCK:");
+    }
+
+    @RequestMapping("/stock/inc")
+    public Long inc() {
+        return stockRedisTemplate.opsForValue().increment("IPHONE_STOCK:");
+    }
+
+    @RequestMapping("/stock/dec")
+    public Long dec() {
+        return stockRedisTemplate.opsForValue().decrement("IPHONE_STOCK:");
     }
 }
