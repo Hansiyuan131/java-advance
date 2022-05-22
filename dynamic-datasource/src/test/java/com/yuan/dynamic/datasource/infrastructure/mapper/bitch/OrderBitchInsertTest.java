@@ -26,8 +26,9 @@ public class OrderBitchInsertTest {
      * 单批次插入数据量
      */
     public static final int PAGE_SIZE = 28000;
+
     /**
-     * 单批次插入数据量
+     * 预计插入数据量 1000_0000
      */
     public static final int INSERT_TOTAL_COUNT = PAGE_SIZE * 36;
     //public static final int INSERT_TOTAL_COUNT = 1000_0000;
