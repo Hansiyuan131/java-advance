@@ -1,0 +1,6 @@
+#!/bin/bash
+
+EVENT_TYPE=$1
+EVENT_DESCRIPTION=$2
+
+echo -e " EVENT_TYPE: $EVENT_TYPE \n EVENT_DESCRIPTION: $EVENT_DESCRIPTION" | mail -s "Redis Sentinel 告警" XXXX@163.com
