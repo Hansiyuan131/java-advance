@@ -21,6 +21,7 @@
         <module>dynamic-datasource</module>
         <module>rpcfx</module>
         <module>cache</module>
+        <module>small-spring</module>
     </modules>
 
     <properties>
