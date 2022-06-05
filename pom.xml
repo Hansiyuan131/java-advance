@@ -22,6 +22,7 @@
         <module>rpcfx</module>
         <module>cache</module>
         <module>small-spring</module>
+        <module>mq</module>
     </modules>
 
     <properties>
